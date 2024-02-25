@@ -1,5 +1,6 @@
 import Hero from '@/components/Hero';
 import InfoBoxes from '@/components/InfoBoxes';
+import HomeProperties from '@/components/HomeProperties';
 
 export const metadata = {
   title: 'Property Pulse | Home',
@@ -13,6 +14,7 @@ const HomePage = () => {
     <>
       <Hero />
       <InfoBoxes />
+      <HomeProperties />
     </>
   );
 
