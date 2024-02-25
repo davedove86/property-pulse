@@ -15,6 +15,7 @@ const Navbar = () => {
   const pathname = usePathname()
 
   return (
+    // TODO Fix header so it spans the whole width of the container like footer - needs to all line up
     <nav className="bg-blue-700 border-b border-blue-500">
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div className="relative flex h-20 items-center justify-between">

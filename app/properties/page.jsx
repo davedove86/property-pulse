@@ -1,10 +1,22 @@
-import Link from 'next/link'
+import PropertyCard from '@/components/PropertyCard'
+import properties from '@/properties.json'
 
 const PropertiesPage = () => {
-  return <div>
-    <h1 className='text-3xl'>Properties</h1>
-    <Link href="/">Home</Link>
-  </div>
+  return (
+    <section className="px-4 py-6">
+        <h2 className="text-3xl font-bold text-blue-500 mb-6 text-center">
+          Recent Properties
+        </h2>
+      { properties.length === 0 ? (<p>No properties found</p> ) : <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {properties.map((property) => (
+            <PropertyCard key={property.id} property={property} />
+          ))}
+        </div>}
+      <div className="container-xl lg:container m-auto">
+
+      </div>
+    </section>
+  )
 }
 
 export default PropertiesPage
