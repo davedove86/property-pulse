@@ -8,7 +8,7 @@ export const metadata = {
 	keywords: 'rental, property, real estate',
 };
 
-const HomePage = async () => {
+const HomePage = () => {
 	return (
 		<>
 			<Hero />
