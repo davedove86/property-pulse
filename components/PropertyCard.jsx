@@ -4,8 +4,8 @@ import {
 	FaBed,
 	FaBath,
 	FaRulerCombined,
-	FaMapMarker,
 	FaMoneyBill,
+	FaMapMarker,
 } from 'react-icons/fa';
 
 const PropertyCard = ({ property }) => {
@@ -20,15 +20,16 @@ const PropertyCard = ({ property }) => {
 			return `${rates.nightly.toLocaleString()}/night`;
 		}
 	};
+
 	return (
-		<div className='bg-white rounded-xl shadow-md relative'>
+		<div className='rounded-xl shadow-md relative'>
 			<Image
-				src={`/images/properties/${property.images[0]}`}
+				src={property.images[0]}
 				alt=''
 				height={0}
 				width={0}
 				sizes='100vw'
-				className='w-full h-auto object-cover rounded-t-xl'
+				className='w-full h-auto rounded-t-xl'
 			/>
 			<div className='p-4'>
 				<div className='text-left md:text-center lg:text-left mb-6'>
@@ -45,8 +46,8 @@ const PropertyCard = ({ property }) => {
 						<span className='md:hidden lg:inline'>Beds</span>
 					</p>
 					<p>
-						<FaBath className='inline mr-2' /> {property.baths}{' '}
-						<span className='md:hidden lg:inline'>Baths</span>
+						<FaBath className='inline mr-2' />
+						{property.baths} <span className='md:hidden lg:inline'>Baths</span>
 					</p>
 					<p>
 						<FaRulerCombined className='inline mr-2' />
@@ -61,11 +62,13 @@ const PropertyCard = ({ property }) => {
 							<FaMoneyBill className='inline mr-2' /> Nightly
 						</p>
 					)}
+
 					{property.rates.weekly && (
 						<p>
 							<FaMoneyBill className='inline mr-2' /> Weekly
 						</p>
 					)}
+
 					{property.rates.monthly && (
 						<p>
 							<FaMoneyBill className='inline mr-2' /> Monthly
@@ -80,7 +83,7 @@ const PropertyCard = ({ property }) => {
 						<FaMapMarker className='text-orange-700 mt-1' />
 						<span className='text-orange-700'>
 							{' '}
-							{property.location.city}, {property.location.state}{' '}
+							{property.location.city} {property.location.state}{' '}
 						</span>
 					</div>
 					<Link
@@ -93,5 +96,4 @@ const PropertyCard = ({ property }) => {
 		</div>
 	);
 };
-
 export default PropertyCard;
